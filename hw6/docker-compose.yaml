@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566"
+    #  - "4571:4571"
+    environment:
+      - SERVICES=s3
+      #- DEBUG=1
+      - AWS_ACCESS_KEY_ID=abc
+      - AWS_SECRET_ACCESS_KEY=xyz
+    #volumes:
+     # - "./localstack:/var/lib/localstack"
